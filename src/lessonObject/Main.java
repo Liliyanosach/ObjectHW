@@ -15,5 +15,7 @@ public class Main {
         System.out.println("Автор - " + dovlatov.getName() + " " +  dovlatov.getSurname());
         System.out.println("Год публикации - " + suitcase.getPublishingYear());
 
+        story.setPublishingYear(2022);
+        System.out.println("story.getPublishingYear() = " + story.getPublishingYear());
     }
 }

@@ -8,11 +8,11 @@ public class Main {
         Book suitcase = new Book("Чемодан", dovlatov, 2007);
 
         System.out.println("Книга - " + story.getName());
-        System.out.println("Автор - " + polevoy.getName() + " " +  polevoy.getSurname());
+        System.out.println("Автор - " + story.getFullName());
         System.out.println("Год публикации - " + story.getPublishingYear());
 
         System.out.println("Книга - " + suitcase.getName());
-        System.out.println("Автор - " + dovlatov.getName() + " " +  dovlatov.getSurname());
+        System.out.println("Автор - " + suitcase.getFullName());
         System.out.println("Год публикации - " + suitcase.getPublishingYear());
 
         story.setPublishingYear(2022);

@@ -1,8 +1,10 @@
 package lessonObject;
 
+import java.util.Objects;
+
 public class Book {
-    private String name;
-    private Author author;
+    private final String name;
+    private final Author author;
     private int publishingYear;
 
     public Book(String name, Author author, int publishingYear) {
@@ -27,8 +29,21 @@ public class Book {
         this.publishingYear = publishingYear;
     }
 
-    public String getFullName() {
-        return author.getName() + " " + author.getSurname();
+    @Override
+    public String toString() {
+        return "Произведение: " + getName() + " " + getAuthor() + " Публикация: " + getPublishingYear();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return publishingYear == book.publishingYear && Objects.equals(name, book.name) && Objects.equals(author, book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, author, publishingYear);
+    }
 }
